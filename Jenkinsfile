@@ -23,7 +23,11 @@ pipeline {
 
         stage('Run Container') {
             steps {
-                sh 'docker run -d -p 8081:8080 tictactoe-app'
+                sh '''
+                     docker stop tictactoecon || true
+                     docker rm tictactoecon || true
+                     docker run -d -p 8081:8080 tictactoecon tictactoe-app
+                     '''
             }
         }
     
