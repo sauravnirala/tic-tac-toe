@@ -21,7 +21,8 @@ pipeline {
                 cp target/tictactoe-web-1.0.war /opt/tomcat/webapps/
                 '''
             }
-        }//
+        }
+    //
 
     }
 
