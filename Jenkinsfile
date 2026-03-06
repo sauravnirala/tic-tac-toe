@@ -26,7 +26,7 @@ pipeline {
                 sh '''
                      docker stop tictactoecon || true
                      docker rm tictactoecon || true
-                     docker run -d -p 8081:8080 tictactoecon tictactoe-app
+                     docker run -d -p 8081:8080 --name tictactoecon tictactoe-app
                      '''
             }
         }
