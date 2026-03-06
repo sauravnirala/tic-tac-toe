@@ -5,15 +5,29 @@
 
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.example</groupId>
-    <artifactId>tic-tac-toe</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <groupId>com.tictactoe</groupId>
+    <artifactId>tictactoe-web</artifactId>
+    <version>1.0</version>
+    <packaging>war</packaging>
 
-    <name>Tic Tac Toe Game</name>
+    <name>Tic Tac Toe Web Game</name>
 
-    <properties>
-        <maven.compiler.source>17</maven.compiler.source>
-        <maven.compiler.target>17</maven.compiler.target>
-    </properties>
+    <build>
+        <plugins>
+
+            <!-- WAR plugin to package web app -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>3.3.2</version>
+
+                <configuration>
+                    <failOnMissingWebXml>false</failOnMissingWebXml>
+                </configuration>
+
+            </plugin>
+
+        </plugins>
+    </build>
 
 </project>
