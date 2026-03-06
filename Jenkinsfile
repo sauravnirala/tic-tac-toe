@@ -17,12 +17,12 @@ pipeline {
         
 
       // stage('Deploy') {
-            steps {
-                sh '''
-                cp target/tictactoe-web-1.0.war /opt/tomcat/webapps/
-                '''
-            }
-        }
+      //      steps {
+      //          sh '''
+      //          cp target/tictactoe-web-1.0.war /opt/tomcat/webapps/
+       //         '''
+       //     }
+      //  }
     //
 
     }
