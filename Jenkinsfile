@@ -15,30 +15,20 @@ pipeline {
             }
         }
         
+        stage('Build Docker Image') {
+            steps {
+                sh 'docker build -t tictactoe-app .'
+            }
+        }
 
-      // stage('Deploy') {
-      //      steps {
-      //          sh '''
-      //          cp target/tictactoe-web-1.0.war /opt/tomcat/webapps/
-       //         '''
-       //     }
-      //  }
-    //
-
+        stage('Run Container') {
+            steps {
+                sh 'docker run -d -p 8081:8080 tictactoe-app'
+            }
+        }
+    
     }
-
-    post {
-
-        success {
-            echo "Build and Deployment Successful"
-        }
-
-        failure {
-            echo "Build Failed"
-        }
-
-        always {
-            echo "Pipeline Finished"
+}
         }
     }
 }
